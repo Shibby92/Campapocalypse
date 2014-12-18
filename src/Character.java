@@ -9,11 +9,11 @@ public class Character {
 	public Character(String name, double hp, double dexterity, Weapon weapon,
 			double strength, double speed) {
 		this.name = name;
-		this.hp = hp;
-		this.dexterity = dexterity;
+		this.hp = hp;//0-250
+		this.dexterity = dexterity;//0-1
 		this.weapon = weapon;
-		this.strength = strength;
-		this.speed = speed;
+		this.strength = strength;//0-10
+		this.speed = speed;//0-20
 	}
 
 	public double attack() {
