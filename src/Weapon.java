@@ -11,5 +11,11 @@ public class Weapon {
 		this.ammo=0;
 	}
 	
+	public String toString(){
+		 String str="";
+		 str+="Damage: " + dmg + "Critical hit: " + critical + "Curent Ammo: " + ammo;
+		 return str;
+	}
+	
 	
 }
