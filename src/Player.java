@@ -30,10 +30,6 @@ public class Player extends Character {
 		return initAttack;
 	}
 
-	public boolean escChance(Character other) {
-		if ((int) ((this.inteligence * this.getSpeed()) / other.getSpeed()) != 0)
-			return true;
-		return false;
-	}
+	
 
 }
