@@ -12,11 +12,21 @@ public class Player extends Character {
 	
 	
 	
+	
+	
 	public double getInteligence() {
+		this.inteligence=0.5+Math.random()*(2-(0.5+1));
 		return inteligence;
 	}
 
 
+	public double  attack(Character osnov){
+		double vrijednostAtt;
+		vrijednostAtt=super.attack()*getInteligence();
+		return vrijednostAtt;
+	}
+	
+	
 
 	public String toString (){
 		StringBuilder sb = new StringBuilder();
@@ -29,8 +39,9 @@ public class Player extends Character {
 	}
 	
 	
-	public double escChance(){
-		return 0;
+	public boolean escChance(Character z){
+		 int chance = (int) ((this.inteligence*this.getSpeed())/ z.getSpeed());
+		return chance >= 1 ? true : false;
 	}
 
 	
