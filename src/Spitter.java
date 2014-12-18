@@ -6,6 +6,6 @@ public class Spitter extends Zombie {
 }
 	@Override
 	public double specAttack() {
-		return 0;
+		return super.specialAttack()*3.5;
 	}
 }

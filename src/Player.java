@@ -43,6 +43,15 @@ public class Player extends Character {
 		 int chance = (int) ((this.inteligence*this.getSpeed())/ z.getSpeed());
 		return chance >= 1 ? true : false;
 	}
+<<<<<<< Updated upstream
 
 	
+=======
+	public boolean escChance(Character other){
+		if(((int)(this.inteligence*this.getSpeed())/other.getSpeed())!=0)
+			return true;
+		return false;
+	}
+
+>>>>>>> Stashed changes
 }
