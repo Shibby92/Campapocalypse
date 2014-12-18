@@ -6,6 +6,6 @@ public class Charger extends Zombie {
 }
 	@Override
 	public double specAttack() {
-		return 0;
+		return super.specialAttack()*2;
 	}
 }
