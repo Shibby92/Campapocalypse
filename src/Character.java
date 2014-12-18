@@ -17,7 +17,7 @@ public class Character {
 	}
 
 	public double attack() {
-		return 0;
+		return this.dexterity*this.strength;
 	}
 
 	public double specialAttack() {
