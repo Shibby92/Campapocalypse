@@ -1,10 +1,52 @@
+import java.util.Scanner;
 
 public class TestGame {
 
 	public static void main(String[] args) {
-	Player first= new Player("Haris",100,0.5,null,6,12,1.5);
-	System.out.println(first.attack());
+		System.out.println("Bila je strasna i tmurna noc...sinoc...danas  je vec druga situacija suncano, cak \nmjestimicno oblacno naravno"
+				+ "trebamo bniti iskreni i reci da je onako cak pretoplo ya \n ovo doba godine....probas da se sakrije od ove odvratne  zege u jednoj staroj napustenoj "
+				+ "kuci. Cujes nesto tamo suska, realno boli trebe briga sta \nsuska ti probas da nadjes lampu...a ono suskaaaaaa.....nadjes lampu ... \npalis je...."
+				+ "KAD IMAS STA VIDJET EMINA....");
+		
+		Player first = new Player("Haris", 150, 0.5, null, 8, 19, 2);
+		// System.out.println(first.attack());
+		// Emina mina=new Emina ("Emina",97,0.7,null,8,15);
+		// Smoker smoke=new Smoker ("SmEmina",80,0.6,null,7,14);
+		// Spitter spit=new Spitter ("SpEmina",79,0.5,null,6,13);
+		// Jockey jock=new Jockey ("JockEmina",75,0.4,null,3,12);
+		// Charger charge=new Charger ("ChargEmina",67,0.3,null,2,11);
+		Scanner in = new Scanner(System.in);
+		int br = 0;
+		Zombie[] prvi = new Zombie[15];
+		while (br < 15) {
 
+			int broj = (int) (1 + (Math.random() * (5 )));
+			switch (broj) {
+			case 1:
+				prvi[br] = new Emina("Emina", 97, 0.7, null, 8, 15);
+				break;
+			case 2:
+				prvi[br] = new Smoker("SmEmina", 80, 0.6, null, 7, 14);
+				break;
+			case 3:
+				prvi[br] = new Spitter("SpEmina", 79, 0.5, null, 6, 13);
+				break;
+			case 4:
+				prvi[br] = new Jockey("JockEmina", 75, 0.4, null, 3, 12);
+				break;
+			case 5:
+				prvi[br] = new Charger("ChargEmina", 67, 0.3, null, 2, 11);
+				break;
+
+			}
+			br++;
+		}
+		if (first.surviveBattle(prvi[0])){
+			System.out.println("Prezivjeli ste!");
+		System.out.println("Ostalo vam je " + first.getHp() + " HP!");
+		}
+		else 
+			System.out.println("JEBIGA SREO SI EMINU...");
 	}
 
 }

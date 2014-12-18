@@ -15,7 +15,7 @@ public class Zombie extends Character {
 		return sb.toString();
 	}
 	public double specAttack(){
-		return 0;
+		return super.specialAttack()*0.9;
 	}
 
 }

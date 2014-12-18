@@ -26,7 +26,7 @@ public class Character {
 	}
 
 	public double specialAttack() {
-		return 0;
+		return this.strength*2;
 
 	}
 

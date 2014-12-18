@@ -20,7 +20,7 @@ public class Player extends Character {
 	}
 
 
-	public double  attack(Character osnov){
+	public double  attack(){
 		double vrijednostAtt;
 		vrijednostAtt=super.attack()*getInteligence();
 		return vrijednostAtt;
@@ -43,15 +43,17 @@ public class Player extends Character {
 		 int chance = (int) ((this.inteligence*this.getSpeed())/ z.getSpeed());
 		return chance >= 1 ? true : false;
 	}
-<<<<<<< Updated upstream
-
-	
-=======
-	public boolean escChance(Character other){
-		if(((int)(this.inteligence*this.getSpeed())/other.getSpeed())!=0)
+	public boolean surviveBattle(Character other){
+		while(true){
+			other.setHp(other.getHp()-this.attack());
+			this.setHp(this.getHp()-other.attack());
+			if (other.getHp()<0 || this.getHp()<0 ) {
+				break;
+			}
+		}
+		if(this.getHp()>0)
 			return true;
-		return false;
+			return false;
+		
 	}
-
->>>>>>> Stashed changes
 }
