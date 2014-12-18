@@ -6,8 +6,6 @@ public class Character {
 	private double strength;
 	private double speed;
 
-	
-	
 	public Character(String name, double hp, double dexterity, Weapon weapon,
 			double strength, double speed) {
 		this.name = name;
@@ -18,11 +16,12 @@ public class Character {
 		this.speed = speed;
 	}
 
-	public attack() {
-
+	public double attack() {
+		return 0;
 	}
 
-	public specialAttack() {
+	public double specialAttack() {
+		return 0;
 
 	}
 

@@ -9,10 +9,13 @@ public class Zombie extends Character {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Name: " + getName() + "\nHP: " + getHp() + "\nDexterity: "
-				+ getDexterity() + "\nWeapon: " + this.weapon.toString()
+				+ getDexterity() + "\nWeapon: " + getWeapon().toString()
 				+ "\nStrength: " + getStrength() + "\nSpeed: " + getSpeed());
 
 		return sb.toString();
+	}
+	public double specAttack(){
+		return 0;
 	}
 
 }

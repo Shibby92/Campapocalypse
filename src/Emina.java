@@ -5,7 +5,8 @@ public class Emina extends Zombie {
 	super(name, hp, dexterity, weapon, strength, speed);
 }
 	@Override
-	public specAttack() {
+	public double specAttack() {
+		return 0;
 		
 	}
 }
