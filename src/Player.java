@@ -28,6 +28,12 @@ public class Player extends Character {
 		
 	}
 	
+	public double attack(){
+		double initAttack = super.attack();
+		System.out.println(initAttack);
+		initAttack *= inteligence;
+		return initAttack;
+	}
 	
 	public double escChance(){
 		return 0;
