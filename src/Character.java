@@ -6,7 +6,7 @@ public class Character {
 	private double strength;
 	private double speed;
 
-	
+//komentar
 	
 	public Character(String name, double hp, double dexterity, Weapon weapon,
 			double strength, double speed) {
