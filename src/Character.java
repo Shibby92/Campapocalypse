@@ -6,6 +6,18 @@ public class Character {
 	private double strength;
 	private double speed;
 
+	
+	
+	public Character(String name, double hp, double dexterity, Weapon weapon,
+			double strength, double speed) {
+		this.name = name;
+		this.hp = hp;
+		this.dexterity = dexterity;
+		this.weapon = weapon;
+		this.strength = strength;
+		this.speed = speed;
+	}
+
 	public attack() {
 
 	}
