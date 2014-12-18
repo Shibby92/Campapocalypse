@@ -5,10 +5,10 @@ public class Weapon {
 	private double critical;
 	private double ammo;
 	
-	public Weapon(){
-		this.dmg=0;
-		this.critical=0;
-		this.ammo=0;
+	public Weapon(double dmg, double critical, double ammo){
+		this.dmg=dmg;
+		this.critical=critical;
+		this.ammo=ammo;
 	}
 	
 	public String toString(){
