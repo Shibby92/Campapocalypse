@@ -17,7 +17,12 @@ public class Character {
 	}
 
 	public double attack() {
+		if(this.dexterity<0.5)
+		return setRndDex()*this.strength;
 		return this.dexterity*this.strength;
+	}
+	public double setRndDex(){
+		return this.dexterity*Math.random();
 	}
 
 	public double specialAttack() {
@@ -81,5 +86,6 @@ public class Character {
 
 		return sb.toString();
 	}
+
 
 }
