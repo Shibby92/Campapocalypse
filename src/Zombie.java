@@ -6,5 +6,13 @@ public class Zombie extends Character {
 	super(name, hp, dexterity, weapon, strength, speed);
 	}
 	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Name: " + getName() + "\nHP: " + getHp() + "\nDexterity: "
+				+ getDexterity() + "\nWeapon: " + this.weapon.toString()
+				+ "\nStrength: " + getStrength() + "\nSpeed: " + getSpeed());
+
+		return sb.toString();
+	}
 
 }
