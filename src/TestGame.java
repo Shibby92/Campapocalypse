@@ -47,14 +47,11 @@ public class TestGame {
 			System.out.println("Novi ZOMBIE... Bjezati ili ne?");
 			run = in.nextInt();
 			if (run == 1 && !first.escChance(prvi[i])) {
-				System.out.println("Niste uspjeli pobjeci, bijte se!\n.\n.BUM!\n.\n.TRS!\n.\n.POAW!\n.");
+				System.out.println("Niste uspjeli pobjeci, bijte se!");
 				if (first.surviveBattle(prvi[i])) {
-					System.out.println("Prezivjeli ste " + (i + 1)
-							+ ". zombie!");
-					System.out.println("Ostalo vam je " + first.getHp()
-							+ " HP!");
+					first.fightScene(i);
 				} else {
-					System.out.println("JEBIGA SREO SI EMINU...");
+					System.out.println("ŠTETA SREO SI EMINU...");
 					break;
 
 				}
@@ -63,19 +60,15 @@ public class TestGame {
 				System.out.println("Uspjesno ste pobjegli!");
 			}
 			else if(run==0){
-				if (first.surviveBattle(prvi[i])) {
-					System.out.println("Prezivjeli ste " + (i + 1)
-							+ ". zombie!");
-					System.out.println("Ostalo vam je " + first.getHp()
-							+ " HP!");
+				first.fightScene(i);
 				} else {
-					System.out.println("JEBIGA SREO SI EMINU...");
+					System.out.println("ŠTETA SREO SI EMINU...");
 					break;
 				}
 				}
 		
 			
-		}
+		
 	}
 
 }

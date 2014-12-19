@@ -45,4 +45,13 @@ public class Player extends Character {
 		return false;
 
 	}
+	public void fightScene(int number){
+			System.out.println(".\n.BUM!\n.\n.TRS!\n.\n.POAW!\n.\nPrezivjeli ste " + (number + 1)
+					+ ". zombie!");
+			System.out.println("Ostalo vam je " + getHp()
+					+ " HP!");
+		
+
+		}
+	
 }
