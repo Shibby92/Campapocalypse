@@ -3,13 +3,11 @@ import java.util.Scanner;
 public class TestGame {
 
 	public static void main(String[] args) {
-		System.out
-				.println("Bila je strasna i tmurna noc...sinoc...danas  je vec druga situacija suncano, cak \nmjestimicno oblacno naravno"
-						+ "trebamo bniti iskreni i reci da je onako cak pretoplo ya \n ovo doba godine....probas da se sakrije od ove odvratne  zege u jednoj staroj napustenoj "
-						+ "kuci. Cujes nesto tamo suska, realno boli trebe briga sta \nsuska ti probas da nadjes lampu...a ono suskaaaaaa.....nadjes lampu ... \npalis je...."
-						+ "KAD IMAS STA VIDJET EMINA....");
+		
 
-		Player first = new Player("Haris", 350, 0.5, null, 8, 5, 2);
+		Player igrac = new Player("Gorjan", 50, 0.5, null, 8, 5, 2);
+	
+		
 		// System.out.println(first.attack());
 		// Emina mina=new Emina ("Emina",97,0.7,null,8,15);
 		// Smoker smoke=new Smoker ("SmEmina",80,0.6,null,7,14);
@@ -21,46 +19,53 @@ public class TestGame {
 		Zombie[] prvi = new Zombie[15];
 		while (br < 15) {
 
-			int broj = (int) (1 + (Math.random() * (5)));
+			int broj = (int) (1 + (Math.random() * (4)));
 			switch (broj) {
 			case 1:
-				prvi[br] = new Emina("Emina", 97, 0.7, null, 8, 15);
+				prvi[br] = new Charger("Charger ", 80, 0.6, null, 7, 14);
 				break;
 			case 2:
-				prvi[br] = new Smoker("SmEmina", 80, 0.6, null, 7, 14);
+				prvi[br] = new Smoker("Smoker Minimina", 80, 0.6, null, 7, 14);
 				break;
 			case 3:
-				prvi[br] = new Spitter("SpEmina", 79, 0.5, null, 6, 13);
+				prvi[br] = new Spitter("Spiter Emina d Hrak", 79, 0.5, null, 6, 13);
 				break;
 			case 4:
-				prvi[br] = new Jockey("JockEmina", 75, 0.4, null, 3, 12);
+				prvi[br] = new Jockey("JOCKEY", 75, 0.4, null, 3, 12);
 				break;
-			case 5:
-				prvi[br] = new Charger("ChargEmina", 67, 0.3, null, 2, 11);
-				break;
-
+						
+				
+//	prvi[br] = new Emina("Emina", 97, 0.7, null, 8, 15);
 			}
 			br++;
 		}
 		int run;
-		for (int i = 0; i < prvi.length; i++) {
-			System.out.println("Novi ZOMBIE... Bjezati ili ne?");
+		int numZombies=5;
+		int brojacPetlje=0;
+		for (int i = 0; i < numZombies ; i++) {
+			brojacPetlje++;
+			System.out.println(Storyline.Storyline(i) );
+			System.out.println(igrac.toString() +" VS \n\n"+ prvi[i].toString() );
+			System.out.println("\nIspred vas je ZOMBIE... Bjezati ili ne? Pritisnite 0 da ostanete, 1 da bjezite:)");
 			run = in.nextInt();
-			if (run == 1 && !first.escChance(prvi[i])) {
-				System.out.println("Niste uspjeli pobjeci, bijte se!");
-				if (first.surviveBattle(prvi[i])) {
-					first.fightScene(i);
+		
+			if (run == 1 && !igrac.escChance(prvi[i])) {
+				System.out.println("Niste uspjeli pobjeci, bijte se!\n");
+				
+				if (igrac.surviveBattle(prvi[i])) {
+					igrac.fightScene(i);
 				} else {
 					System.out.println("ŠTETA SREO SI EMINU...");
 					break;
 
 				}
 
-			} else if(first.escChance(prvi[i])){
+			} else if(igrac.escChance(prvi[i])){
 				System.out.println("Uspjesno ste pobjegli!");
 			}
 			else if(run==0){
-				first.fightScene(i);
+				if (igrac.surviveBattle(prvi[i])) {
+					igrac.fightScene(i);
 				} else {
 					System.out.println("ŠTETA SREO SI EMINU...");
 					break;
@@ -68,7 +73,20 @@ public class TestGame {
 				}
 		
 			
-		
+			
+		}
+		System.out.println("PRED VAMA SE POKAZUJE STRASNA I PRESTRASNA SEFICA PODZEMLJA");
+		System.out.println("ISPRED VAS JE ");
+		System.out.println("**********************  EMINA  **********************");
+		prvi[6] = new Emina("Emina", 97, 0.7, null, 8, 15);
+		System.out.println("Pritisnite 1 i pritisnite enter da Emina dobije po guzici i da je posaljete kuci placuci");
+		int broj= in.nextInt();
+		if (igrac.surviveBattle(prvi[6])|| brojacPetlje>4) {
+			System.out.println("CESTITAMO POBJEDILI STE D HOROR PRICU PIVO FROM EMINA BOSS-a\n uzivaj u pivi zasluzio si :)");
+		} else {
+			System.out.println("ŠTETA SREO SI EMINU...sta si ti mislio?!?!?!?!");
+			
+		}
 	}
 
 }
